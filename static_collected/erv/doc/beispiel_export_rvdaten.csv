@@ -1,0 +1,27 @@
+CUSTOMER_NR;CUSTOMER;STREET;POSTAL_CODE;CITY;WHOLESALER_GLN;WHOLESALER;MANUFACTURER;BRAND;CATEGORY;GTIN;ARTICLE;VOLUME_HL;VOLUME_CONSUMERUNIT;SALES_PERIOD
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456780;Artikel A Fass 20,0 l; 3.80 ;19;2019-02
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456780;Artikel A Fass 20,0 l; 1.60 ;8;2019-03
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456780;Artikel A Fass 20,0 l; 1.60 ;8;2019-03
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456780;Artikel A Fass 20,0 l; 1.20 ;6;2019-03
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456780;Artikel A Fass 20,0 l; 1.60 ;8;2019-05
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456780;Artikel A Fass 20,0 l; 4.00 ;20;2019-01
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456780;Artikel A Fass 20,0 l; 2.00 ;10;2019-05
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456781;Artikel B Harasse 20 x 0,5 l Glas Mehrweg; 0.80 ;160;2019-03
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456781;Artikel B Harasse 20 x 0,5 l Glas Mehrweg; 0.50 ;100;2019-03
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456781;Artikel B Harasse 20 x 0,5 l Glas Mehrweg; 0.80 ;160;2019-03
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456781;Artikel B Harasse 20 x 0,5 l Glas Mehrweg; 0.60 ;120;2019-01
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke X;Bier CH;7600123456781;Artikel B Harasse 20 x 0,5 l Glas Mehrweg; 1.00 ;200;2019-01
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Y;Alkoholfreies Bier;7600123456782;Artikel C Harasse 20 x 0,5 l Glas Mehrweg; 0.10 ;20;2019-03
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Y;Alkoholfreies Bier;7600123456782;Artikel C Harasse 20 x 0,5 l Glas Mehrweg; 0.10 ;20;2019-03
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Y;Alkoholfreies Bier;7600123456782;Artikel C Harasse 20 x 0,5 l Glas Mehrweg; 0.20 ;40;2019-01
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Y;Alkoholfreies Bier;7600123456782;Artikel C Harasse 20 x 0,5 l Glas Mehrweg; 0.20 ;40;2019-05
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Y;Alkoholfreies Bier;7600123456784;Artikel D Harasse 24 x 0,33 l Flasche Glas Mehrweg; 0.08 ;24;2019-02
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Y;Alkoholfreies Bier;7600123456784;Artikel D Harasse 24 x 0,33 l Flasche Glas Mehrweg; 0.08 ;24;2019-03
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Y;Alkoholfreies Bier;7600123456784;Artikel D Harasse 24 x 0,33 l Flasche Glas Mehrweg; 0.08 ;24;2019-05
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Z;Tonic / Bittergetränke;7600123456785;Artikel E Harasse 30 x 0,2 l Flasche Glas Mehrweg; 0.06 ;30;2019-01
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Z;Tonic / Bittergetränke;7600123456785;Artikel E Harasse 30 x 0,2 l Flasche Glas Mehrweg; 0.06 ;30;2019-02
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Z;Tonic / Bittergetränke;7600123456785;Artikel E Harasse 30 x 0,2 l Flasche Glas Mehrweg; 0.12 ;60;2019-03
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Z;Tonic / Bittergetränke;7600123456785;Artikel E Harasse 30 x 0,2 l Flasche Glas Mehrweg; 0.06 ;30;2019-05
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Z;Tonic / Bittergetränke;7600123456786;Artikel F Harasse 30 x 0,2 l Glas Mehrweg; 0.06 ;30;2019-02
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Z;Tonic / Bittergetränke;7600123456786;Artikel F Harasse 30 x 0,2 l Glas Mehrweg; 0.06 ;30;2019-05
+123456;Restaurant XY;Bahnhofstrasse 99;8000;Zürich;4399912345678;Getränke Pfiffig;Produzent XY;Marke Z;Citro;7600123456787;Artikel G Harasse 6 x 1,5 l Flasche PET Einweg; 0.54 ;36;2019-01

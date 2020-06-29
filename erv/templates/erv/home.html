@@ -1,0 +1,60 @@
+{% extends "erv/layout.html" %}
+{% block title %}
+Home
+{% endblock %}
+{% block header %}
+<a href="{% url 'home' %}">Home</a>
+{% endblock %}
+{% block content %}
+    <h1 class="font-weight-light mb-4">Menü</h1>
+    <p class="lead">
+        Aus welcher Rolle möchten Sie die Funktionen der RV-Plattform betrachten?
+    </p>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Produzent
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="{% url 'cust_index' %}">Übersicht RV-Vereinbarungen</a></li>
+                    <li class="list-group-item"><a href="{% url 'cust_view' id=1 %}">Detail-Ansicht RV-Kunde</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Grossist
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="{% url 'requ_index' %}">Übersicht Daten-Anfragen</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Gastronom
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="{% url 'requ_index' %}">Übersicht Daten-Anfragen</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Backend
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="{% url 'art_class' %}">Artikel-Mapping Vorschläge</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "erv/layout.html" %}
+{% block title %}
+Übersicht Daten-Anfragen
+{% endblock %}
+{% block header %}
+<a href="{% url 'home' %}">Home</a> > <a href="{% url 'cust_index' %}">Übersicht Daten-Anfragen</a>
+{% endblock %}
+{% block content %}
+    <h1 class="font-weight-light mb-4">&Uuml;bersicht Daten-Anfragen</h1>
+    <p class="lead">
+        Wählen Sie eine Anfrage an, um eine Freigabe der Daten zu erteilen.
+    </p>
+    <div class="list-group">
+
+        {% for requ in requests %}
+        <a href="#" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#modDataRequest" data-cust-name="{{ requ.Customer.Name }}" data-cust-detail="{{ requ.Customer.Address }}, {{ requ.Customer.PostalCode }} {{ requ.Customer.City }}" data-manu-name="{{ requ.RequestedFor }}" data-requ-name="{{ requ.RequestedBy }}">
+            <i class="fa fa-home mr-2"></i> {{ requ.Customer.Name }}, {{ requ.Customer.City }}
+            <span class="pull-right"><small>Angefordert von: {{ requ.RequestedBy }}</small></span>
+        </a>
+        {% endfor %}
+       
+    </div>
+
+
+    <!-- The Modal -->
+    <div class="modal fade" id="modDataRequest">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Daten-Anfrage bearbeiten</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        <strong><span id="requName"></span></strong> beantragt die Freigabe der Absatzdaten für den nachfolgenden Kunden und Produzenten.
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col col-lg-3">
+                        Kunde
+                    </div>
+                    <div class="col">
+                        <h5 class="font-weight-light"><i class="fa fa-home mr-2"></i><span id="custName"></span></h5>
+                        <p>
+                            <small><span id="custDetail"></span></small>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col col-lg-3">
+                        Produzent
+                    </div>
+                    <div class="col">
+                        <h5 class="font-weight-light"><i class="fa fa-home mr-2"></i><span id="manuName"></span></h5>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Anfrage ablehnen</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal">Anfrage bestätigen</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).on("click", ".list-group-item", function () {
+            var custName = $(this).data('cust-name'); 
+            var custDetail = $(this).data('cust-detail');
+            var manuName = $(this).data('manu-name'); 
+            var requName = $(this).data('requ-name'); 
+
+            $(".modal-body #custName").html( custName );
+            $(".modal-body #custDetail").html( custDetail );
+            $(".modal-body #manuName").html( manuName );
+            $(".modal-body #requName").html( requName );
+        });
+    </script>
+    
+
+{% endblock %}

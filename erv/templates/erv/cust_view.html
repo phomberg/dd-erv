@@ -1,0 +1,195 @@
+{% extends "erv/layout.html" %}
+{% block title %}
+RV-Kunde: {{ customer.Name }}
+{% endblock %}
+{% block header %}
+<a href="{% url 'home' %}">Home</a> > <a href="{% url 'cust_index' %}">Kunden-Übersicht</a>
+{% endblock %}
+{% block content %}
+    <h1 class="font-weight-light mb-4"><i class="fa fa-home mr-2"></i> {{ customer.Name }}</h1>
+    <p class="lead">
+        {{ customer.Address }}, {{ customer.PostalCode }} {{ customer.City }}
+    </p>
+
+    {% if sales %}
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="list-group">
+                    {% for sale in sales %}
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fa fa-glass mr-2"></i> {{ sale.Article }} <span class="badge badge-light pull-right">{{ sale.Quantity }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary mt-4" data-toggle="modal" data-target="#modDataRequest">Weitere Daten anfordern</button>
+                    <button type="button" class="btn btn-primary mt-4 ml-4" data-toggle="modal" data-target="#modDataExport">Daten exportieren</button>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Artikel A", "Artikel B", "Artikel C", "Artikel D"],
+                datasets: [{
+                    label: 'Menge in Stück',
+                    data: [96, 72, 24, 6],
+                    borderWidth: 1,
+                    backgroundColor: ["#034b6f", "#00728f", "#00999b", "#27bf92", "#94df7d", "#f9f871"],
+                }]
+            },
+            options: {
+                    plugins: {
+                    colorschemes: {
+                        scheme: 'brewer.PRGn11'
+                    }
+                }
+            }
+            });
+        </script>
+
+    {% else %}
+    
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-6 alert alert-danger" style="max-height: 200px;">
+                <div class="card-body">
+                    <h5><i class="fa fa-warning fa-lg mr-2 mb-2"></i>Keine Daten verfügbar</h5>
+                    <p>
+                        Für diesen Kunden sind noch keine Bezugsdaten verfügbar.
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#modDataRequest">Daten jetzt anfordern</button>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+
+  
+    {% endif %}
+
+    <!-- The Modal -->
+    <div class="modal fade" id="modDataRequest">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Daten anfordern</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col col-lg-3">
+                        Kunde
+                    </div>
+                    <div class="col">
+                        <h5 class="font-weight-light"><i class="fa fa-home mr-2"></i> {{ customer.Name }}</h5>
+                        <p>
+                            <small>{{ customer.Address }}, {{ customer.PostalCode }} {{ customer.City }}</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-3">
+                        Grossist
+                    </div>
+                    <div class="col">
+                        <select class="form-control">
+                            <option>Getränke Pfiffig, Hintertupfigen</option>
+                            <option>Getränke Durschtig, Flims</option>
+                            <option>Drinks & More, Zürich</option>
+                            <option>Flüssig Getränke, Oberkulm</option>
+                            <option>Fläsche-Händler, Buochs</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col col-lg-3">
+                        
+                    </div>
+                    <div class="col col-lg-1">
+                        <input type="checkbox" value="" id="defaultCheck1">
+                    </div>
+                    <div class="col">
+                        <p><small>Bestätigung, dass Einwilligung des Kunden vorliegt.</small></p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Anfrage schicken</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modDataExport">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Daten exportieren</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        Die benötigten Absatzdaten können in verschiedenen Formaten und Strukturen exportiert werden.
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col col-lg-3" style="text-align: center;">
+                        <i class="fa fa-file-text-o fa-3x"></i>
+                    </div>
+                    <div class="col">
+                        <a href="/static/erv/doc/beispiel_export_rvdaten.csv">Beispiel_Export_RVDaten.csv</a> 
+                        <p>
+                            <small>
+                                Beispiel Datei mit Absatzdaten im CSV-Format.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col col-lg-3" style="text-align: center;">
+                        <i class="fa fa-file-excel-o fa-3x"></i>
+                    </div>
+                    <div class="col">
+                        <a href="/static/erv/doc/beispiel_export_rvdaten.xlsx">Beispiel_Export_RVDaten.xlsx</a> 
+                        <p>
+                            <small>
+                                Beispiel Datei mit aufbereiteten Absatzdaten im Excel-Format.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Alles klar</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    
+
+{% endblock %}

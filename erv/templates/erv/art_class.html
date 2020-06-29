@@ -1,0 +1,96 @@
+{% extends "erv/layout.html" %}
+{% block title %}
+Artikel Mapping
+{% endblock %}
+{% block header %}
+<a href="{% url 'home' %}">Home</a> > <a href="{% url 'art_class' %}">Artikel Mapping</a>
+{% endblock %}
+{% block content %}
+    <h1 class="font-weight-light mb-4">Artikel Mapping</h1>
+    <p class="lead">
+        Artikel eingeben, um Mapping-Vorschläge zu erhalten.
+    </p>
+    
+    <div class="row">
+        <div class="col-sm-6">
+
+            <div class="card">
+                <div class="card-header">Artikel - Feature Extraction</div>
+                <div class="card-body">
+
+                    <div class="row">
+                        <form action="/art_class/" method="post">
+                            {% csrf_token %}
+                            <div class="col">
+                                <h5 class="card-title">Input Artikel</h5>
+                                
+                                <input id="article" type="text" name="article" maxlength="100" required>
+                                <input type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col">
+                            <h5 class="card-title">Extracted Features</h5>
+                    
+                            <div class="row">
+                                <div class="col-lg-3">Article</div>
+                                <div class="col">{{ art_map_prop.Article }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">Product</div>
+                                <div class="col">{{ art_map_prop.Product }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">Pack-Size</div>
+                                <div class="col">{{ art_map_prop.PackSize }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">Pack-Type</div>
+                                <div class="col">{{ art_map_prop.PackType }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3">Units</div>
+                                <div class="col">{{ art_map_prop.Units }}</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card h-100">
+                <div class="card-header">Zufällige Beispiel-Artikel</div>
+                <div class="card-body">
+                    <ul>
+                    {% for art in rnd_articles %}
+                        <li>{{ art.Article }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">Mapping-Vorschläge</div>
+                <div class="card-body">
+                    <ul>
+                    {% for art in art_map_prop.MappingProposals %}
+                        <li>{{ art.Article }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+   
+{% endblock %}
